@@ -1,0 +1,91 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /get-folders [GET]
+Traceback (most recent call last):
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/app.py", line 194, in get_folders
+    folders = gdown.download_folder(DRIVE_DIR, quiet=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/gdown/download_folder.py", line 275, in download_folder
+    is_success, gdrive_file = _download_and_parse_google_drive_link(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/gdown/download_folder.py", line 158, in _download_and_parse_google_drive_link
+    return_code, child = _download_and_parse_google_drive_link(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/gdown/download_folder.py", line 176, in _download_and_parse_google_drive_link
+    raise FolderContentsMaximumLimitError(message)
+gdown.exceptions.FolderContentsMaximumLimitError: The gdrive folder with url: https://drive.google.com/drive/folders/1J7BZ8Fka74-h_KI_r4rm3rvGYoWNh8yC?hl=en has more than 50 files, gdrive can't download more than this limit.
+INFO:werkzeug:127.0.0.1 - - [22/May/2024 02:35:53] "[35m[1mGET /get-folders HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /get-folders [GET]
+Traceback (most recent call last):
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/app.py", line 196, in get_folders
+    folders = gdown.drive.download_folder_by_query(query)
+              ^^^^^^^^^^^
+AttributeError: module 'gdown' has no attribute 'drive'
+INFO:werkzeug:127.0.0.1 - - [22/May/2024 02:41:47] "[35m[1mGET /get-folders HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2024 02:59:32] "GET /get-folders HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2024 03:03:20] "GET /get-folders HTTP/1.1" 200 -
+ERROR:app:Exception on /process-folder [POST]
+Traceback (most recent call last):
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 939, in ensure_sync
+    return self.async_to_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hoangdieu/PycharmProjects/ETL/.venv/lib/python3.12/site-packages/flask/app.py", line 960, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+INFO:werkzeug:127.0.0.1 - - [22/May/2024 03:50:59] "[35m[1mPOST /process-folder HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [22/May/2024 03:54:44] "POST /process-folder HTTP/1.1" 200 -
